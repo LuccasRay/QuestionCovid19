@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title> QuestionCovid19 </title>
+	<style type="text/css">
+
+		form{
+			padding: 40px;
+			background-color: lightgreen;
+			border: 67px;
+		}
+		.botao{
+			font-size: 27px;
+			background-color: white;
+			border-radius: 10px;
+
+		}
+		.botao: hover{
+			background-color: #F0FFFF;
+			color: white;
+		}
+    .remover{
+       display: none;
+    }
+    .rt{
+       display: block;
+       background-color: orange;
+       font-size: 25px;
+    }
+        
+	</style>
+</head>
+<body>
+
+	<div>
+		<form>
+
+    <center> <h1> Orientações contra o COVID-19 </h1> </center>
+
+		<center> <br> <input type="button" value="Você é idoso?" class="botao" onclick="pegarDados('1');"></center>
+		<center> <br> <input type="button" value="Sofre de problemas respiratórios? " class="botao" onclick="pegarDados('2');"></center>
+		<center> <br> <input type="button" value=" É diabético? " class="botao" onclick="pegarDados('3');"></center>
+		<center> <br> <input type="button" value="É saudável?" class="botao" onclick="pegarDados('4');"></center> <br>
+		</form>
+
+    </div>
+    <center><p class="remover" id="valuebutton"></p></center>
+    <script url="answers.js"> 
+
+      function pegarDados (perguntas) {
+        switch (perguntas) {
+        case '1':{
+        let div = document.getElementById("valuebutton");
+        div.classList.remove("remover");
+        div.classList.add("rt");
+        document.getElementById("valuebutton").innerHTML = "Fique em casa, peça para fazerem as compras para você!";
+        break;
+        }
+        case '2':{
+        let div = document.getElementById("valuebutton");
+        div.classList.remove("remover");
+        div.classList.add("rt");
+        document.getElementById("valuebutton").innerHTML = "Fique em casa, tome sol e faça exercícios leves!";
+        break;
+        }
+        case '3':{
+        let div = document.getElementById("valuebutton");
+        div.classList.remove("remover");
+        div.classList.add("rt");
+        document.getElementById("valuebutton").innerHTML = "Fique em casa e cuide da sua saúde!";
+        break;
+        }
+        case '4':{
+        let div = document.getElementById("valuebutton");
+        div.classList.remove("remover");
+        div.classList.add("rt");
+        document.getElementById("valuebutton").innerHTML = "Faça compras pelos mais idosos, mas use máscaras!";
+        break;
+        }
+        default:
+        document.getElementById("valuebutton").innerHTML = "erro";
+      }
+    }
+
+    </script>
+
+</body>
+</html>
